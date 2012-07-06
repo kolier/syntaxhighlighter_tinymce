@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * @file Module file of syntaxhighlighter_tinymce.
+ */
+
+/**
+ * Implementation of hook_wysiwyg_plugin().
+ */
+function syntaxhighlighter_tinymce_wysiwyg_plugin($editor, $version) {
+  switch ($editor) {
+  	case 'tinymce':
+  	  if ($version > 3) {
+  	    return array(
+  	      'insertcode' => array(
+  	        'url' => 'http://drupal.org/project/syntaxhighlighter',
+  	        'path' => drupal_get_path('module', 'syntaxhighlighter_tinymce') . '/plugins/insertcode',
+  	        'filename' => 'editor_plugin.js',
+  	        'buttons' => array(
+  	          'insertcode' => t('Insert Code'),
+  	        ),
+	  	      'load' => TRUE,
+	  	      'internal' => FALSE,
+	        ),
+  	    );
+  	  }
+      break;
+	}
+}
+
+/**
+ * Implementation of hook_wysiwyg_include_directory().
+ */
+function syntaxhighlighter_tinymce_wysiwyg_include_directory($type) {
+  switch ($type) {
+    case 'plugins':
+      return $type;
+  }
+}

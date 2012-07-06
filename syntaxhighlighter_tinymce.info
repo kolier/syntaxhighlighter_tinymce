@@ -1,0 +1,6 @@
+name = "Syntaxhighlighter TinyMCE"
+description = "Allows you to insert syntaxhighlighter code use TinyMCE WYSIWYG button."
+core = 7.x
+version = 7.x-1.0-dev
+dependencies[] = wysiwyg
+dependencies[] = syntaxhighlighter
