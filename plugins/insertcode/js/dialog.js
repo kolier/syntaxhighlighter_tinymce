@@ -1,5 +1,3 @@
-tinyMCEPopup.requireLangPack();
-
 var InsertCodeDialog = {
   init : function() {
     if (tinyMCEPopup.editor.selection.getNode().nodeName == 'PRE') {
